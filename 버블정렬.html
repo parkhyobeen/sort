@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<html lang="ko">
+
+	<title>버블정렬</title>
+	<meta name="description" content="My Parse App">
+	<meta name="viewport" content="width=device-width">
+
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="https://npmcdn.com/parse@2.1.0/dist/parse.min.js"></script>
+
+	<script>
+	 Parse.initialize("박효빈");
+        Parse.serverURL="https://hyoserver.herokuapp.com/parse";
+  
+    function test() {
+    	//버블정렬
+
+    	//임의의 수 
+
+    	var arr = [1,5,2,4,7,8,6,3,10,9];
+    	var str = "";
+    	for(var i=0; i<arr.length; i++) {
+    		str += arr[i] + "";
+    	}
+    	alert("정렬 전:" +str);
+
+    	//정렬
+
+    	str ="";
+    	for (var i=0; i<arr.length; i++) {
+    		for (var j=1; j<arr.length; j++) {
+    			if(arr[j-1] > arr[j]) {
+    				var temp; 
+    				temp = arr[j-1];
+    				arr[j-1] = arr[j];
+    				arr[j] = temp;
+    			}
+    		}
+    	}
+    	//정렬 후
+    	for (var i=0; i<arr.length; i++) {
+    		str += arr[i] + " ";
+
+    	}
+    	alert("정렬 후 :" +str);
+    }
+</script>
+</head>
+<body>
+	<input type="button" value="버블 정렬 테스트" onclick="test();">
+</body>
+</html>
